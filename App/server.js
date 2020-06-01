@@ -35,11 +35,11 @@ io.on('connection', (socket) => {
 
     //Escucha de nuevos mensajes
     socket.on('new_message', (data) => {
-        //Emitir los mensajes a los que estan en la sala.
+        //Emitir los mensajes a los que estan en la sala
         io.sockets.emit('new_message', { message: data.message, username: socket.username });
     })
 
-    //Anuncia que un usuario está escribiendo.
+    //Anuncia que un usuario está escribiendo
     socket.on('typing', (data) => {
         socket.broadcast.emit('typing', { username: socket.username })
     })
