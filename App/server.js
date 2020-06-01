@@ -1,15 +1,15 @@
-//Libreria de express.
+//Libreria de express
 const express = require('express')
 const app = express()
 
-//Se establece la pagina estatica y el formato.
+//Se establece la pagina estatica y el formato
 app.set('view engine', 'ejs')
 
-//Se establece el directorio de los demas recursos del programa.
+//Se establece el directorio de los demas recursos del programa
 app.use(express.static('public'))
 
 
-//Establece la pagina de inicio.
+//Establece la pagina de inicio
 app.get('/', (req, res) => {
     res.render('index')
 })
